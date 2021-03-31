@@ -21,7 +21,7 @@ public class Exam{
     @OneToOne
     private Grades grade;
 
-    @ManyToMany @JoinTable(name="exam_students", joinColumns = @JoinColumn ( name="exam_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"))
+    @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})@JoinTable( name="exam_students", joinColumns = @JoinColumn ( name="exam_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"))
     private List<Student> examStudents;
 
 

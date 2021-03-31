@@ -22,16 +22,16 @@ public class Student {
      private Dormitory studDormitory;
 
 
-    @ManyToMany(mappedBy = "courseStudents")
+    @ManyToMany(mappedBy = "courseStudents", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Course> studentCourses;
 
-    @ManyToMany(mappedBy = "examStudents")
+    @ManyToMany(mappedBy = "examStudents", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Exam> exams;
 
     @ManyToOne
     private Department studentDep;
 
-    @OneToMany(mappedBy = "studentGrade")
+    @OneToMany(mappedBy = "studentGrade", cascade = CascadeType.ALL)
     private List<Grades> grades;
 
     public Student(int id, String firstName, String lastName, String email) {

@@ -15,7 +15,7 @@ public class Dormitory {
 
 public Dormitory(){}
 
-@OneToMany(mappedBy = "studDormitory")
+@OneToMany(mappedBy = "studDormitory", cascade = CascadeType.ALL)
     List<Student> accomodatedStudents;
 
 public Dormitory(int id, String name, String address, int capacity) {

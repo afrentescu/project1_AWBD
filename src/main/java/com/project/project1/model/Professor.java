@@ -14,10 +14,18 @@ public class Professor {
     private String lastName;
     private String email;
 
-     @ManyToOne
+    public Department getProfessorDep() {
+        return professorDep;
+    }
+
+    public void setProfessorDep(Department professorDep) {
+        this.professorDep = professorDep;
+    }
+
+    @ManyToOne
      private Department professorDep;
 
-     @OneToMany(mappedBy = "courseTeacher")
+     @OneToMany(mappedBy = "courseTeacher", cascade = CascadeType.ALL)
      List<Course> teachedCourses;
 
     public Professor(){

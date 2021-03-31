@@ -15,7 +15,7 @@ public class Department {
     @OneToMany(mappedBy = "studentDep")
     private List<Student> departementStudents;
 
-    @OneToMany(mappedBy = "professorDep")
+    @OneToMany(mappedBy = "professorDep", cascade = CascadeType.ALL)
     List<Professor> departmentProfessors;
 
     public Department(){

@@ -18,7 +18,7 @@ public class Course {
     @OneToOne
     private Exam exam;
 
-    @ManyToMany @JoinTable(name="course_students", joinColumns = @JoinColumn ( name="course_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"))
+    @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})@JoinTable(name="course_students", joinColumns = @JoinColumn ( name="course_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"))
     private List<Student>  courseStudents;
 
 
