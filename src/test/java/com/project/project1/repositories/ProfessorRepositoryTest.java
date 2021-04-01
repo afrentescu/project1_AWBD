@@ -1,6 +1,9 @@
 package com.project.project1.repositories;
 import java.util.List;
+
+import com.project.project1.model.Department;
 import com.project.project1.model.Professor;
+import com.project.project1.model.Student;
 import com.project.project1.repository.ProfessorRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -24,6 +27,17 @@ public class ProfessorRepositoryTest {
 
     @Autowired
     ProfessorRepository professorRepository;
+
+
+    @Test
+    public void addProfessor()
+    {
+        Professor professor = new Professor();
+       professor.setFirstName("Magda");
+       professor.setLastName("Popa");
+       professor.setEmail(" aaassaaa");
+        professorRepository.save(professor);}
+
 
     @Test
     public void findByLastName() {

@@ -14,13 +14,7 @@ public class Professor {
     private String lastName;
     private String email;
 
-    public Department getProfessorDep() {
-        return professorDep;
-    }
 
-    public void setProfessorDep(Department professorDep) {
-        this.professorDep = professorDep;
-    }
 
     @ManyToOne
      private Department professorDep;
@@ -69,6 +63,14 @@ public class Professor {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Department getProfessorDep() {
+        return professorDep;
+    }
+
+    public void setProfessorDep(Department professorDep) {
+        this.professorDep = professorDep;
     }
 
     @Override

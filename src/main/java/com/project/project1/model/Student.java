@@ -18,7 +18,8 @@ public class Student {
 
     }
 
-     @ManyToOne
+
+    @ManyToOne
      private Dormitory studDormitory;
 
 
@@ -73,6 +74,47 @@ public class Student {
         this.email = email;
     }
 
+
+
+    public Dormitory getStudDormitory() {
+        return studDormitory;
+    }
+
+    public void setStudDormitory(Dormitory studDormitory) {
+        this.studDormitory = studDormitory;
+    }
+
+    public List<Course> getStudentCourses() {
+        return studentCourses;
+    }
+
+    public void setStudentCourses(List<Course> studentCourses) {
+        this.studentCourses = studentCourses;
+    }
+
+    public List<Exam> getExams() {
+        return exams;
+    }
+
+    public void setExams(List<Exam> exams) {
+        this.exams = exams;
+    }
+
+    public Department getStudentDep() {
+        return studentDep;
+    }
+
+    public void setStudentDep(Department studentDep) {
+        this.studentDep = studentDep;
+    }
+
+    public List<Grades> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(List<Grades> grades) {
+        this.grades = grades;
+    }
     @Override
     public String toString() {
         return "Student{" +

@@ -57,6 +57,14 @@ public Dormitory(int id, String name, String address, int capacity) {
         this.capacity = capacity;
     }
 
+    public List<Student> getAccomodatedStudents() {
+        return accomodatedStudents;
+    }
+
+    public void setAccomodatedStudents(List<Student> accomodatedStudents) {
+        this.accomodatedStudents = accomodatedStudents;
+    }
+
     @Override
     public String toString() {
         return "Dormitory{" +

@@ -1,17 +1,12 @@
+delete from student;
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (1, 'stud1@gmail.com', 'Adela', 'Frentescu', 2, 1);
 
-
-delete from course;
-insert into course (id, description, name, course_teacher_id ) values (1, 'you will learn about...', 'Algorithms', 1);
-insert into course (id, description, name, course_teacher_id ) values (2, 'you will learn about...', 'Machine learning', 1);
-insert into course (id, description, name, course_teacher_id ) values (3, 'you will learn about...', 'Human perspective', 7);
-insert into course (id, description, name, course_teacher_id ) values (4, 'you will learn about...', 'Building projection', 8);
-insert into course (id, description, name, course_teacher_id ) values (5, 'you will learn about...', 'Data Structures', 5);
-insert into course (id, description, name, course_teacher_id ) values (6, 'you will learn about...', 'Testing', 5);
-insert into course (id, description, name, course_teacher_id ) values (7, 'you will learn about...', 'Databases', 6);
-
-
-
-
-
-
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (3, 'stud3@gmail.com', 'Narcisa', 'Maixm', 3, 4);
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (4, 'stud4@gmail.com', 'Vlad', 'Ionescu', 2, 4);
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (5, 'stud5@gmail.com', 'Alex', 'Popescu', 1, 5);
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (6, 'stud6@gmail.com', 'Elvira', 'Mom', 1, 2);
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (7, 'stud7@gmail.com', 'Andrei', 'George', 2, 1);
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (8, 'stud8@gmail.com', 'Stefan', 'Popa', 3, 2);
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (9, 'stud0@gmail.com', 'Tudor', 'Andrei', 3, 1);
+insert into student (id, email, first_name, last_name, stud_dormitory_id, student_dep_id) values (10, 'stud11@gmail.com', 'Ioana', 'Vadu', 3, 1);
 
