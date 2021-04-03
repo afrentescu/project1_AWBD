@@ -14,6 +14,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.slf4j.Logger;
 
@@ -53,11 +55,15 @@ public class ProfessorRepositoryTest {
     @Test
     public void findById() {
 
-        // final Logger logger = LoggerFactory.getLogger(ProfessorRepositoryTest.class);
-
-        Professor professors = professorRepository.findById(2);
+        Professor professors = professorRepository.findProfessorById(2);
         assertFalse(professors.equals(null));
 
+    }
+
+    @Test
+    public void deleteById(){
+        professorRepository.deleteById(6);
+        assertThat(professorRepository.count()).isEqualTo(5);
     }
 
 }

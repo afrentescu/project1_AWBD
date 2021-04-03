@@ -1,5 +1,6 @@
 package com.project.project1.repositories;
 
+import static org.assertj.core.api.Assertions.assertThat;
 
 import com.project.project1.model.Course;
 import com.project.project1.model.Department;
@@ -55,5 +56,11 @@ public class CourseRepositoryTest {
         Course course = courseRepository.findCourseById(2);
         assertFalse(course.equals(null));
 
+    }
+
+    @Test
+    public void deleteById(){
+        courseRepository.deleteById(8);
+        assertThat(courseRepository.count()).isEqualTo(7);
     }
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Info</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<body>
+<div class="container" style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color:lavenderblush;">
+                        <h1 class="panel-title" th:text="${course.getName()}">Course</h1>
+                        <h3 class="panel-title" th:text="${course.getDescription()}">Course</h3>
+                        <h3 class="panel-title" th:text="${course.getCourseTeacher().getLastName()}">Course</h3>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="background-color:lavenderblush;">
+                    <h1 class="panel-title">Exam INFO</h1>
+                    <h3 class="panel-title">Location: Classrom Nr:</h3>
+                    <h2 class="panel-title" th:text="${course.getExam().getClassromNr()}"></h2>
+                    <h3 class="panel-title">Date & Time</h3>
+                    <h2 class="panel-title" th:text="${course.getExam().getDate()}"></h2>
+
+                </div>
+
+            </div>
+        </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="background-color:lavenderblush;">
+                    <h1 class="panel-title">Course Students</h1>
+                    <ul>
+                        <li th:each="student:${course.courseStudents}"th:text="${student.getLastName()}">
+                            Students
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

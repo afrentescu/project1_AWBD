@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.awt.print.Pageable;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -62,4 +63,9 @@ public class StudentRepositoryTest
         Page<Student> allStudents = studentRepository.findAll(firstPage);
     Assert.assertTrue(allStudents.getNumberOfElements() == 2);}
 
+    @Test
+    public void deleteById(){
+        studentRepository.deleteById(9);
+        assertThat(studentRepository.count()).isEqualTo(8);
+    }
 }

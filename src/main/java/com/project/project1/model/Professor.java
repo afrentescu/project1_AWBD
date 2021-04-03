@@ -73,6 +73,14 @@ public class Professor {
         this.professorDep = professorDep;
     }
 
+    public List<Course> getTeachedCourses() {
+        return teachedCourses;
+    }
+
+    public void setTeachedCourses(List<Course> teachedCourses) {
+        this.teachedCourses = teachedCourses;
+    }
+
     @Override
     public String toString() {
         return "Professor{" +

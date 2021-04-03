@@ -12,4 +12,5 @@ import java.util.List;
 public interface CourseRepository extends CrudRepository<Course, Integer> {
 
     Course findCourseById(int id);
+    void deleteById(int id);
 }

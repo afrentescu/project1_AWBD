@@ -24,7 +24,7 @@ public class Student {
 
 
     @ManyToMany(mappedBy = "courseStudents", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private List<Course> studentCourses;
+    private List<Course> courses;
 
     @ManyToMany(mappedBy = "examStudents", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Exam> exams;
@@ -85,11 +85,11 @@ public class Student {
     }
 
     public List<Course> getStudentCourses() {
-        return studentCourses;
+        return courses;
     }
 
     public void setStudentCourses(List<Course> studentCourses) {
-        this.studentCourses = studentCourses;
+        this.courses = studentCourses;
     }
 
     public List<Exam> getExams() {

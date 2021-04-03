@@ -59,6 +59,29 @@ public class Course {
     public void setDescription(String description) {
         this.description = description;
     }
+    public Exam getExam() {
+        return exam;
+    }
+
+    public void setExam(Exam exam) {
+        this.exam = exam;
+    }
+
+    public List<Student> getCourseStudents() {
+        return courseStudents;
+    }
+
+    public void setCourseStudents(List<Student> courseStudents) {
+        this.courseStudents = courseStudents;
+    }
+
+    public Professor getCourseTeacher() {
+        return courseTeacher;
+    }
+
+    public void setCourseTeacher(Professor courseTeacher) {
+        this.courseTeacher = courseTeacher;
+    }
 
     @Override
     public String toString() {
