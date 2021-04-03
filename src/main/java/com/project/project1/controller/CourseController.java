@@ -33,7 +33,7 @@ public class CourseController {
     @RequestMapping("/course/delete/{id}")
     public String deleteById(@PathVariable String id){
         courseService.deleteById(Integer.parseInt(id));
-        return "redirect:/courses";}
+        return "redirect:/courses/list";}
 
 
     @RequestMapping("/course/new")
