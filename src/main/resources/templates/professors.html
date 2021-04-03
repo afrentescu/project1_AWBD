@@ -32,6 +32,8 @@
             <td><a href="#" th:href="@{'/professors/delete/' + ${professor.id}}">Delete</a></td>
         </tr>
     </table>
+    <form class="button" th:action="@{/professor/new}" method="POST">
+        <input type="submit" value="ADD PROFESSOR"/>
 </div>
 </body>
 </html>

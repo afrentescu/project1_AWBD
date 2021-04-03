@@ -14,6 +14,6 @@ public interface ProfessorRepository extends CrudRepository<Professor, Integer> 
     @Query("select p from Professor p where p.professorDep.id = ?1")
     List<Professor>  findByDepartment(int departmentId);
 
-    Professor findProfessorById( int id);
+    Professor findById( int id);
     void deleteById(int id);
 }

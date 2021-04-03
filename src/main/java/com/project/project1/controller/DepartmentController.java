@@ -6,7 +6,8 @@ import com.project.project1.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -14,12 +15,31 @@ import java.util.List;
 public class DepartmentController {
 
     @Autowired
-    private DepartmentService departmentService;
+     DepartmentService departmentService;
 
 
     @RequestMapping("/departments/list")
-    public String departmentsList(Model model){
+    public ModelAndView professorsList(){
+        ModelAndView modelAndView = new ModelAndView("departments");
         List<Department> departments = departmentService.findAll();
-        model.addAttribute("departments",departments);return "departments";}
+        modelAndView.addObject("departments",departments);
+        return modelAndView;
+    }
+
+    @GetMapping("/department/info/{id}")
+    public String showById(@PathVariable String id, Model model){
+        model.addAttribute("department", departmentService.findById(Integer.parseInt(id)));
+        return "deparmentInfo";}
+
+    @RequestMapping("/department/new")
+    public String newCourse(Model model) {
+        model.addAttribute("department", new Department());
+        return "departmentAdd";}
+
+    @PostMapping("/department")
+    public String saveOrUpdate(@ModelAttribute Department department)
+    {   departmentService.addDepartment(department);
+        return "redirect:/departments/list";
+    }
 
 }

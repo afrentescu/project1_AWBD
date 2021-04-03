@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Professor Info</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"/>
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<body>
+<div class="container" style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color:lavenderblush;">
+                        <h3 class="panel-title" th:text="${professor.getEmail()}"></h3>
+                        <h3 class="panel-title" th:text="${professor.getFirstName()}"></h3>
+                        <h3 class="panel-title" th:text="${professor.getLastName()}"></h3>
+                        <h3 class="panel-title" th:text="${professor.getProfessorDep().getName()}"></h3>
+
+                    </div>
+
+                </div>
+            </div>
+          <div class="panel panel-primary">
+                <div class="panel-heading" style="background-color:lavenderblush;">
+                    <h1 class="panel-title">Teached Courses</h1>
+                    <h2 class="panel-title" th:text="${professor.getTeachedCourses().getName()}"></h2>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

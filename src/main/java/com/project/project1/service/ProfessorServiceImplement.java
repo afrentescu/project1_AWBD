@@ -29,8 +29,8 @@ public class ProfessorServiceImplement implements  ProfessorSevrice{
     }
 
     @Override
-    public Professor findProfessorById(int id) {
-        Professor professor = professorRepository.findProfessorById(id);
+    public Professor findById(int id) {
+        Professor professor = professorRepository.findById(id);
         if (professor.equals(null))
         {
             throw new RuntimeException("Professor does not exist!");

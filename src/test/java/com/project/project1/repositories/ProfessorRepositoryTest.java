@@ -55,7 +55,7 @@ public class ProfessorRepositoryTest {
     @Test
     public void findById() {
 
-        Professor professors = professorRepository.findProfessorById(2);
+        Professor professors = professorRepository.findById(2);
         assertFalse(professors.equals(null));
 
     }
