@@ -91,4 +91,9 @@ public class Course {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    public void removeStudent(Student student) {
+        student.getCourses().remove(this);
+        courseStudents.remove(student);
+    }
 }

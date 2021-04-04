@@ -29,7 +29,7 @@ public class DepartmentController {
     @GetMapping("/department/info/{id}")
     public String showById(@PathVariable String id, Model model){
         model.addAttribute("department", departmentService.findById(Integer.parseInt(id)));
-        return "deparmentInfo";}
+        return "departmentInfo";}
 
     @RequestMapping("/department/new")
     public String newCourse(Model model) {

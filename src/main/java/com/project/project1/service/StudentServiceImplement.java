@@ -1,6 +1,7 @@
 package com.project.project1.service;
 
 
+import com.project.project1.model.Course;
 import com.project.project1.model.Student;
 import com.project.project1.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,23 @@ public class StudentServiceImplement implements  StudentService{
 
     @Override
     public void deleteById(int id) {
-     studentRepository.deleteById(id);
+
+        Optional<Student> studentOptional = studentRepository.findById(id);
+        if (!studentOptional.isPresent()) {
+            throw new RuntimeException("Student not found!");
+        }
+        Student student= studentOptional.get();
+        List<Course> courses = new LinkedList<Course>();
+        student.getCourses().iterator().forEachRemaining(courses::add);
+
+        for (Course course: courses
+        ) {
+            student.removeCourse(course);
+        }
+
+        studentRepository.save(student);
+        studentRepository.deleteById(id);
+
     }
 
     @Override

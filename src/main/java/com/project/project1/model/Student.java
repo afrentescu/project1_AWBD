@@ -74,7 +74,13 @@ public class Student {
         this.email = email;
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
 
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     public Dormitory getStudDormitory() {
         return studDormitory;
@@ -123,5 +129,15 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public void removeCourse(Course course) {
+        course.getCourseStudents().remove(this);
+        courses.remove(course);
+    }
+
+    public void removeExam(Exam exam) {
+        exam.getExamStudents().remove(this);
+        exams.remove(exam);
     }
 }

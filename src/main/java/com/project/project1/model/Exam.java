@@ -58,6 +58,30 @@ public class Exam{
         this.classromNr = classromNr;
     }
 
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Grades getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Grades grade) {
+        this.grade = grade;
+    }
+
+    public List<Student> getExamStudents() {
+        return examStudents;
+    }
+
+    public void setExamStudents(List<Student> examStudents) {
+        this.examStudents = examStudents;
+    }
+
     @Override
     public String toString() {
         return "Exam{" +
@@ -65,5 +89,10 @@ public class Exam{
                 ", date=" + date +
                 ", classromNr=" + classromNr +
                 '}';
+    }
+
+    public void removeStudent(Student student) {
+        student.getExams().remove(this);
+        examStudents.remove(student);
     }
 }

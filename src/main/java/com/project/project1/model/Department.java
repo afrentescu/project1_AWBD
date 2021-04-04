@@ -44,6 +44,22 @@ public class Department {
         this.name = name;
     }
 
+    public List<Student> getDepartementStudents() {
+        return departementStudents;
+    }
+
+    public void setDepartementStudents(List<Student> departementStudents) {
+        this.departementStudents = departementStudents;
+    }
+
+    public List<Professor> getDepartmentProfessors() {
+        return departmentProfessors;
+    }
+
+    public void setDepartmentProfessors(List<Professor> departmentProfessors) {
+        this.departmentProfessors = departmentProfessors;
+    }
+
     @Override
     public String toString() {
         return "Department{" +
