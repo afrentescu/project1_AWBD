@@ -12,9 +12,9 @@
             <div class="pannel-group">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background-color:lavenderblush;">
-                        <h3 class="panel-title" th:text="${professor.getEmail()}"></h3>
-                        <h3 class="panel-title" th:text="${professor.getFirstName()}"></h3>
                         <h3 class="panel-title" th:text="${professor.getLastName()}"></h3>
+                        <h3 class="panel-title" th:text="${professor.getFirstName()}"></h3>
+                        <h3 class="panel-title" th:text="${professor.getEmail()}"></h3>
                         <h3 class="panel-title" th:text="${professor.getProfessorDep().getName()}"></h3>
 
                     </div>
@@ -23,10 +23,12 @@
             </div>
           <div class="panel panel-primary">
                 <div class="panel-heading" style="background-color:lavenderblush;">
-                    <h1 class="panel-title">Teached Courses</h1>
-                    <h2 class="panel-title" th:text="${professor.getTeachedCourses().getName()}"></h2>
+                    <h3 class="panel-title">Teached Courses</h3>
 
-
+                    <ul>
+                        <li th:each="course:${professor.teachedCourses}"th:text="${course.getName()}">
+                        </li>
+                    </ul>
                 </div>
 
             </div>

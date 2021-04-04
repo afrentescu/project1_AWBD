@@ -28,8 +28,8 @@
             <td th:text="${professor.firstName}">First Name</td>
             <td th:text="${professor.getProfessorDep().getName()}">Department</td>
 
-            <td><a href="#" th:href="@{'/professors/info/' + ${professor.id}}">Info</a></td>
-            <td><a href="#" th:href="@{'/professors/delete/' + ${professor.id}}">Delete</a></td>
+            <td><a href="#" th:href="@{'/professor/info/' + ${professor.id}}">Info</a></td>
+            <td><a href="#" th:href="@{'/professor/delete/' + ${professor.id}}">Delete</a></td>
         </tr>
     </table>
     <form class="button" th:action="@{/professor/new}" method="POST">

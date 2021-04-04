@@ -30,8 +30,8 @@
             <td th:text="${student.getStudDormitory().getName()}">Dormitory</td>
             <td th:text="${student.getStudentDep().getName()}">Department</td>
 
-            <td><a href="#" th:href="@{'/students/info/' + ${student.id}}">Info</a></td>
-            <td><a href="#" th:href="@{'/students/delete/' + ${student.id}}">Delete</a></td>
+            <td><a href="#" th:href="@{'/student/info/' + ${student.id}}">Info</a></td>
+            <td><a href="#" th:href="@{'/student/delete/' + ${student.id}}">Delete</a></td>
         </tr>
     </table>
 </div>

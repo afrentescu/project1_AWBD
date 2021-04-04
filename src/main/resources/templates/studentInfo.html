@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Info</title>
+</head>
+<body>
+<div class="container" style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color:lavenderblush;">
+                        <h1 class="panel-title" th:text="${student.getLastName()}">lastName</h1>
+                        <h3 class="panel-title" th:text="${student.getFirstName()}">fistName</h3>
+                        <h3 class="panel-title" th:text="${student.getEmail()}">Email</h3>
+                        <h3 class="panel-title">Department: </h3>
+                        <h3 class="panel-title"  th:text="${student.getStudentDep().getName()}">Dep name</h3>
+                        <h3 class="panel-title">The student is accomodated in the following dormitory: </h3>
+                        <h3 class="panel-title" th:text="${student.getStudDormitory().getName()}">Dormitory name</h3>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading" style="background-color:lavenderblush;">
+            <h1 class="panel-title">Enrolled Courses</h1>
+            <ul>
+                <li th:each="course:${student.courses}"th:text="${course.getName()}">
+                    Students
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+</div>
+</div>
+</body>
+</html>

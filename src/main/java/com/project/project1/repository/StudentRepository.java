@@ -16,6 +16,6 @@ public interface StudentRepository extends PagingAndSortingRepository<Student, I
     List<Student> findByDormitory(int id);
 
 
-    Student findStudentById(int id);
+    Student findById(int id);
     void deleteById(int id);
 }

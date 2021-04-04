@@ -2,6 +2,7 @@ package com.project.project1.service;
 
 
 import com.project.project1.model.Course;
+import com.project.project1.model.Exam;
 import com.project.project1.model.Student;
 import com.project.project1.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class StudentServiceImplement implements  StudentService{
         return students;    }
 
     @Override
-    public Student findStudentById(int id) {
-        Optional<Student> studentOptional = Optional.ofNullable(studentRepository.findStudentById(id));
+    public Student findById(int id) {
+        Optional<Student> studentOptional = Optional.ofNullable(studentRepository.findById(id));
         if (!studentOptional.isPresent())
         {
             throw new RuntimeException("Student not found!");
@@ -47,7 +48,7 @@ public class StudentServiceImplement implements  StudentService{
     @Override
     public void deleteById(int id) {
 
-        Optional<Student> studentOptional = studentRepository.findById(id);
+        Optional<Student> studentOptional = Optional.ofNullable(studentRepository.findById(id));
         if (!studentOptional.isPresent()) {
             throw new RuntimeException("Student not found!");
         }
@@ -60,9 +61,16 @@ public class StudentServiceImplement implements  StudentService{
             student.removeCourse(course);
         }
 
+        List<Exam> exams = new LinkedList<Exam>();
+        student.getExams().iterator().forEachRemaining(exams::add);
+
+        for (Exam exam: exams
+        ) {
+            student.removeExam(exam);
+        }
         studentRepository.save(student);
         studentRepository.deleteById(id);
-
+// studentRepository.deleteById(id);
     }
 
     @Override
