@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Professors</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css"
           integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH"
           crossorigin="anonymous">
@@ -26,10 +26,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="/dormitories/list">Dormitories</a>
             </li>
-            <li class="nav-item active" >
+            <li class="nav-item">
                 <a class="nav-link" href="/professors/list">Professors</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/students/list">Students</a>
             </li>
 
@@ -37,33 +37,10 @@
 
     </div>
 </nav>
-<div class="container">
-    <table class="table table-hover ">
-        <thead class="thead-inverse">
-        <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th> Department</th>
-
-        </tr>
-        </thead>
-        <tr th:each="professor, stat : ${professors}"
-            th:class="${stat.odd}? 'table-light':'table-dark'"
-        >
-            <td th:text="${professor.id}">1</td>
-            <td th:text="${professor.email}">Email </td>
-            <td th:text="${professor.lastName}">Last Name</td>
-            <td th:text="${professor.firstName}">First Name</td>
-            <td th:text="${professor.getProfessorDep().getName()}">Department</td>
-
-            <td><a href="#" th:href="@{'/professor/info/' + ${professor.id}}">Info</a></td>
-            <td><a href="#" th:href="@{'/professor/delete/' + ${professor.id}}">Delete</a></td>
-        </tr>
-    </table>
-    <form class="button" th:action="@{/professor/new}" method="POST">
-        <input type="submit" class="btn btn-primary" value="ADD PROFESSOR"/>
-</div>
+<img src="D:\project1_AWBD\src\main\resources\templates\uni2.jpg" >
+<blockquote class="blockquote">
+    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
 </body>
 </html>
