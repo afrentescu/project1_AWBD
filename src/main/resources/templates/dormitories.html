@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<<head>
+<head>
     <meta charset="UTF-8">
     <title>Dormitories</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css" />
-    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -13,8 +11,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Address</th>
-            <th>Capacity</th>
+
         </tr>
         </thead>
         <tr th:each="dormitory, stat : ${dormitories}"
@@ -22,10 +19,13 @@
         >
             <td th:text="${dormitory.id}">1</td>
             <td th:text="${dormitory.name}">Name </td>
-            <td th:text="${dormitory.address}">Address </td>
-            <td th:text="${dormitory.capacity}">Capacity </td>
+            <td><a href="#" th:href="@{'/dormitory/info/' + ${dormitory.id}}">Details</a></td>
+
         </tr>
     </table>
+    <form class="button" th:action="@{/dormitory/new}" method="POST">
+        <input type="submit" value="ADD DORMITORY"/>
+    </form>
 </div>
 </body>
 </html>

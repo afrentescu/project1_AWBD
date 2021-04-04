@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Department Info</title>
+</head>
+<body>
+<div class="container" style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="background-color:lavenderblush;">
+                        <h1 class="panel-title" th:text="${dormitory.getName()}">Name</h1>
+                        <h3 class="panel-title">Address</h3>
+                        <h2 class="panel-title" th:text="${dormitory.getAddress()}"></h2>
+                        <h3 class="panel-title">Capacity:</h3>
+                        <h2 class="panel-title" th:text="${dormitory.getCapacity()}"></h2>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="background-color:lavenderblush;">
+                    <h1 class="panel-title">Accomodated Students</h1>
+                    <ul>
+                        <li th:each="student:${dormitory.accomodatedStudents}"th:text="${student.getLastName()}">
+                            Students
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>
