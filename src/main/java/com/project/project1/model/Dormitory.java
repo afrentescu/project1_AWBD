@@ -1,6 +1,8 @@
 package com.project.project1.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -9,8 +11,14 @@ public class Dormitory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull(message = "Please enter the name of the dormitory")
     private String name;
+
+    @NotNull(message = "Please enter the address!")
     private String address;
+
+    @Min(value = 100)
     private int capacity;
 
 public Dormitory(){}

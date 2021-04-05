@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -54,7 +55,7 @@ public class ProfessorController {
         return "profAdd";}
 
     @PostMapping("/professor")
-    public String saveOrUpdate(@ModelAttribute Professor professor)
+    public String saveOrUpdate(@Valid @ModelAttribute Professor professor)
     {   professorSevrice.addProfessor(professor);
         return "redirect:/professors/list";
     }

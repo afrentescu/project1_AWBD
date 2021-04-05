@@ -2,6 +2,9 @@ package com.project.project1.model;
 
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -11,7 +14,11 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull(message = "You should enter the name of the course!")
     private String name;
+
+    @NotNull(message = "Please enter the highlights of the course!")
     private String description;
 
 
@@ -22,7 +29,7 @@ public class Course {
     private List<Student>  courseStudents;
 
 
-
+    @Min(value=1)
     @ManyToOne
     private Professor courseTeacher;
 

@@ -2,6 +2,9 @@ package com.project.project1.model;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlInlineBinaryData;
 import java.util.List;
 
 @Entity
@@ -10,13 +13,18 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull(message = "Please enter the first name!")
     private String firstName;
+
+    @NotNull(message = "Please enter the last name!")
     private String lastName;
     private String email;
 
     public Student(){
 
     }
+
 
 
     @ManyToOne
@@ -28,6 +36,7 @@ public class Student {
 
     @ManyToMany(mappedBy = "examStudents", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Exam> exams;
+
 
     @ManyToOne
     private Department studentDep;

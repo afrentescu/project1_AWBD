@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -42,7 +43,7 @@ public class DormitoriesController {
         return "dormitoryAdd";}
 
     @PostMapping("/dormitory")
-    public String saveOrUpdate(@ModelAttribute Dormitory dormitory)
+    public String saveOrUpdate(@Valid @ModelAttribute Dormitory dormitory)
     {   dormitoryService.addDormitory(dormitory);
         return "redirect:/dormitories/list";
     }

@@ -1,6 +1,7 @@
 package com.project.project1.service;
 
 
+import com.project.project1.exceptions.ObjectNotFoundException;
 import com.project.project1.model.Course;
 import com.project.project1.model.Exam;
 import com.project.project1.model.Student;
@@ -34,7 +35,7 @@ public class StudentServiceImplement implements  StudentService{
         Optional<Student> studentOptional = Optional.ofNullable(studentRepository.findById(id));
         if (!studentOptional.isPresent())
         {
-            throw new RuntimeException("Student not found!");
+            throw new ObjectNotFoundException("Student not found!");
         }
         return studentOptional.get();
     }

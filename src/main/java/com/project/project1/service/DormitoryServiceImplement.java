@@ -1,5 +1,6 @@
 package com.project.project1.service;
 
+import com.project.project1.exceptions.ObjectNotFoundException;
 import com.project.project1.model.Dormitory;
 import com.project.project1.repository.DormitoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class DormitoryServiceImplement implements DormitoryService{
         Optional<Dormitory> dormitoryOptional = dormitoryRepository.findById(id);
         if (!dormitoryOptional.isPresent())
         {
-            throw new RuntimeException("Dormitory not found!");
+            throw new ObjectNotFoundException("Dormitory not found!");
         }
         return dormitoryOptional.get();
     }

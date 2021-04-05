@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 @Controller
 public class CourseController {
@@ -47,7 +48,7 @@ public class CourseController {
         return "courseAdd";}
 
     @PostMapping("/course")
-    public String saveOrUpdate(@ModelAttribute Course course)
+    public String saveOrUpdate(@Valid @ModelAttribute Course course)
     {   courseService.addCourse(course);
         return "redirect:/courses/list";
     }

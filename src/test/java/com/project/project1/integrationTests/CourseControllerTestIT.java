@@ -66,6 +66,12 @@ public class CourseControllerTestIT {
 */
 
     @Test
+    public void checkNotFoundStatus() throws Exception {
+        mockMvc.perform(get("/course/info/{id}","200")).andExpect(status().isNotFound());//.andExpect(view().name("notfound"));
+    }
+
+
+    @Test
     public void showAddPage() throws Exception {
         log.info("checking returned view for adding a course ...");
         mockMvc.perform(post("/course/new/", "1")).andExpect(status().isOk()).andExpect(view().name("courseAdd"));

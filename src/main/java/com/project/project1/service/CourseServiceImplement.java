@@ -1,5 +1,6 @@
 package com.project.project1.service;
 
+import com.project.project1.exceptions.ObjectNotFoundException;
 import com.project.project1.model.Course;
 import com.project.project1.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class CourseServiceImplement implements CourseService{
         Optional<Course> courseOptional = courseRepository.findById(id);
         if (!courseOptional.isPresent())
         {
-            throw new RuntimeException("Course not found!");
+            throw new ObjectNotFoundException("Course not found!");
         }
         return courseOptional.get();
     }

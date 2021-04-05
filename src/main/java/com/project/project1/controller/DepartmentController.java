@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -41,7 +42,7 @@ public class DepartmentController {
         return "departmentAdd";}
 
     @PostMapping("/department")
-    public String saveOrUpdate(@ModelAttribute Department department)
+    public String saveOrUpdate(@Valid @ModelAttribute Department department)
     {   departmentService.addDepartment(department);
         return "redirect:/departments/list";
     }

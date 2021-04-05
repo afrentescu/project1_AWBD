@@ -1,5 +1,6 @@
 package com.project.project1.service;
 
+import com.project.project1.exceptions.ObjectNotFoundException;
 import com.project.project1.model.Department;
 import com.project.project1.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class DepartmentServiceImplement implements DepartmentService{
         Optional<Department> departmentOptional = departmentRepository.findById(id);
         if (!departmentOptional.isPresent())
         {
-            throw new RuntimeException("The deparment you are looking for doesn't exist!");
+            throw new ObjectNotFoundException("The deparment you are looking for doesn't exist!");
         }
         return departmentOptional.get();
     }

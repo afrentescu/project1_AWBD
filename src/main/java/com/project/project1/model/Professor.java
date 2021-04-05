@@ -1,6 +1,8 @@
 package com.project.project1.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -10,12 +12,17 @@ public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull(message = "Please enter the first name!")
     private String firstName;
+
+    @NotNull(message = "Please enter the last name")
     private String lastName;
     private String email;
 
 
 
+    @Min(value = 1)
     @ManyToOne
      private Department professorDep;
 

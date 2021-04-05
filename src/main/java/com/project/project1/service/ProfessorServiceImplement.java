@@ -1,6 +1,7 @@
 package com.project.project1.service;
 
 
+import com.project.project1.exceptions.ObjectNotFoundException;
 import com.project.project1.model.Professor;
 import com.project.project1.repository.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class ProfessorServiceImplement implements  ProfessorSevrice{
         Professor professor = professorRepository.findById(id);
         if (professor.equals(null))
         {
-            throw new RuntimeException("Professor does not exist!");
+            throw new ObjectNotFoundException("Professor does not exist!");
         }
         return professor;
     }

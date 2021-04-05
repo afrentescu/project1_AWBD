@@ -1,6 +1,7 @@
 package com.project.project1.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -10,6 +11,8 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @NotNull(message = "Please enter the name of the department!")
     private String name;
 
     @OneToMany(mappedBy = "studentDep")
