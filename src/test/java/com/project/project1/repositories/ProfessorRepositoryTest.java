@@ -1,14 +1,10 @@
 package com.project.project1.repositories;
 import java.util.List;
-
-import com.project.project1.model.Department;
 import com.project.project1.model.Professor;
-import com.project.project1.model.Student;
 import com.project.project1.repository.ProfessorRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -17,7 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import org.slf4j.Logger;
 
 
 @RunWith(SpringRunner.class)

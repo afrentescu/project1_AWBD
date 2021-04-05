@@ -17,9 +17,13 @@ import java.util.List;
 @Controller
 public class StudentsController {
       @Autowired
-      private StudentService studentService;
+       StudentService studentService;
       @Autowired
       private DormitoryService dormitoryService;
+
+    public StudentsController(StudentService studentService) {
+        this.studentService = studentService;
+    }
 
     @RequestMapping("/students/list")
     public ModelAndView professorsList(){

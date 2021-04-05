@@ -15,15 +15,20 @@ import java.util.List;
 public class ProfessorController {
 
     @Autowired
-    private ProfessorSevrice professorSevrice;
-/*
+     ProfessorSevrice professorSevrice;
 
-    @RequestMapping("/professors/list")
-    public String professorsList(Model model){
-        List<Professor> professors = professorSevrice.findAll();
-        model.addAttribute("professors",professors);
-        return "professors";
-     }*/
+    public ProfessorController(ProfessorSevrice professorSevrice) {
+        this.professorSevrice = professorSevrice;
+    }
+
+    /*
+
+        @RequestMapping("/professors/list")
+        public String professorsList(Model model){
+            List<Professor> professors = professorSevrice.findAll();
+            model.addAttribute("professors",professors);
+            return "professors";
+         }*/
      @RequestMapping("/professors/list")
      public ModelAndView professorsList(){
     ModelAndView modelAndView = new ModelAndView("professors");

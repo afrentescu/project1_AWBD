@@ -16,7 +16,11 @@ import java.util.List;
 public class DormitoriesController {
 
     @Autowired
-    private DormitoryService dormitoryService;
+     DormitoryService dormitoryService;
+
+    public DormitoriesController(DormitoryService dormitoryService) {
+        this.dormitoryService = dormitoryService;
+    }
 
 
     @RequestMapping("/dormitories/list")

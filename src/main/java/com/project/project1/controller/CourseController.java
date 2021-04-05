@@ -16,6 +16,11 @@ public class CourseController {
     @Autowired
      CourseService courseService;
 
+    public CourseController(CourseService courseService) {
+        this.courseService = courseService;
+    }
+
+
     @RequestMapping("/courses/list")
     public ModelAndView professorsList(){
         ModelAndView modelAndView = new ModelAndView("courses");

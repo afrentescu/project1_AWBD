@@ -17,6 +17,10 @@ public class DepartmentController {
     @Autowired
      DepartmentService departmentService;
 
+    public DepartmentController(DepartmentService departmentService) {
+        this.departmentService =departmentService;
+    }
+
 
     @RequestMapping("/departments/list")
     public ModelAndView professorsList(){

@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-
+import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,4 +47,21 @@ public class CourseServiceTest {
         List<Course> allCourses = courseService.findAll();
         assertEquals(allCourses.size(), 1);
         verify(courseRepository, times(1)).findAll();}
+
+        /*
+    @Test
+    public void addCourse() {
+        //arrange
+        Course course = new Course(19, "new", "new2");
+        when(courseRepository.save(course)).thenReturn((Course) List.of(course));
+
+        //act
+        List<Course> result = (List<Course>) courseService.addCourse(course);
+
+        //assert
+        Course addedCourse = result.get(result.size() - 1);
+        assertEquals(course.getName(), addedCourse.getName());
+        assertEquals(course.getDescription(), addedCourse.getDescription());
+
+    }*/
 }
