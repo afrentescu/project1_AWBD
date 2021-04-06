@@ -48,7 +48,7 @@ public class CourseController {
         return "courseAdd";}
 
     @PostMapping("/course")
-    public String saveOrUpdate(@Valid @ModelAttribute Course course)
+    public String saveOrUpdate( @ModelAttribute  @Valid Course course)
     {   courseService.addCourse(course);
         return "redirect:/courses/list";
     }

@@ -22,7 +22,7 @@ public class Professor {
 
 
 
-    @Min(value = 1)
+
     @ManyToOne
      private Department professorDep;
 

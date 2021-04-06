@@ -1,6 +1,7 @@
 package com.project.project1.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(value =   1)
     private int id;
 
     @NotNull(message = "Please enter the name of the department!")

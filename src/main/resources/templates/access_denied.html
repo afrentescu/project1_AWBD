@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Professors</title>
+    <title>Error</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css"
           integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH"
           crossorigin="anonymous">
@@ -26,7 +26,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/dormitories/list">Dormitories</a>
             </li>
-            <li class="nav-item active" >
+            <li class="nav-item ">
                 <a class="nav-link" href="/professors/list">Professors</a>
             </li>
             <li class="nav-item">
@@ -37,36 +37,22 @@
 
     </div>
 </nav>
-<div class="container">
-    <table class="table table-hover ">
-        <thead class="thead-inverse">
-        <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th> Department</th>
-
-        </tr>
-        </thead>
-        <tr th:each="professor, stat : ${professors}"
-            th:class="${stat.odd}? 'table-light':'table-dark'"
-        >
-            <td th:text="${professor.id}">1</td>
-            <td th:text="${professor.email}">Email </td>
-            <td th:text="${professor.lastName}">Last Name</td>
-            <td th:text="${professor.firstName}">First Name</td>
-            <td th:text="${professor.getProfessorDep().getName()}">Department</td>
-
-            <td><a href="#" th:href="@{'/professor/info/' + ${professor.id}}">Info</a></td>
-            <td><a href="#" th:href="@{'/professor/delete/' + ${professor.id}}">Delete</a></td>
-        </tr>
-    </table>
-    <form class="button" th:action="@{/professor/new}" method="POST">
-        <input type="submit" class="btn btn-primary" value="ADD PROFESSOR"/>
-    </form>
-        <br><br>
-        <div class="col-md-3"><form th:action="@{/logout}" method="POST"> <input type="submit" class="btn btn-primary" value="Logout"> </form></div>
+<div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Oh! <br>ACCESS DENIED!<br></strong> <a href="#" class="alert-link"> You don't have access to such data!</a>
 </div>
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

@@ -2,9 +2,8 @@ package com.project.project1.model;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
+
 import javax.validation.constraints.NotNull;
-import javax.xml.bind.annotation.XmlInlineBinaryData;
 import java.util.List;
 
 @Entity
@@ -24,8 +23,6 @@ public class Student {
     public Student(){
 
     }
-
-
 
     @ManyToOne
      private Dormitory studDormitory;

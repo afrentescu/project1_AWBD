@@ -1,15 +1,12 @@
 package com.project.project1.controller;
 
-import com.project.project1.model.Course;
 import com.project.project1.model.Dormitory;
-import com.project.project1.model.Professor;
 import com.project.project1.model.Student;
 import com.project.project1.service.DormitoryService;
 import com.project.project1.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -47,7 +44,7 @@ public class StudentsController {
 
 
     @RequestMapping("/student/new")
-    public String newCourse(Model model) {
+    public String newCourse( Model model) {
         List<Dormitory> dormitories = dormitoryService.findAll();
         model.addAttribute("student", new Student());
         model.addAttribute("dormitories", dormitories);
@@ -56,7 +53,6 @@ public class StudentsController {
     @PostMapping("/student")
     public String saveOrUpdate( @ModelAttribute @Valid Student student)
     {
-
         studentService.addStudent(student);
         return "redirect:/students/list";
     }

@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/minty/bootstrap.min.css"
           integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH"
           crossorigin="anonymous">
+<style>
+img {
+  display: block;
+  margin-left: auto;
 
+  margin-right: auto;
+ width:100%;}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -19,14 +26,14 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link" href="/departments/list">Departments
-                </a>
+                <a class="nav-link" href="/departments/list">Departments </a>
+              
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/courses/list">Courses</a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/dormitories/list">Dormitories</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/courses/list">Courses</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/professors/list">Professors</a>
@@ -39,6 +46,9 @@
 
     </div>
 </nav>
+
+<img src="D:\project1_AWBD\src\main\resources\templates\campus.png" class="center">
+
 <div class="container">
     <table class="table table-hover ">
         <thead class="thead-inverse">
@@ -60,6 +70,9 @@
     <form class="button" th:action="@{/dormitory/new}" method="POST">
         <input type="submit" class="btn btn-primary" value="ADD DORMITORY"/>
     </form>
+
+    <br><br>
+    <div class="col-md-3"><form th:action="@{/logout}" method="POST"> <input type="submit" class="btn btn-primary" value="Logout"> </form></div>
 </div>
 </body>
 </html>

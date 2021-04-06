@@ -2,8 +2,7 @@ package com.project.project1.model;
 
 
 import javax.persistence.*;
-import javax.validation.Valid;
-import javax.validation.constraints.Min;
+
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -29,7 +28,6 @@ public class Course {
     private List<Student>  courseStudents;
 
 
-    @Min(value=1)
     @ManyToOne
     private Professor courseTeacher;
 

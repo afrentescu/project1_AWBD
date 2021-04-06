@@ -10,6 +10,7 @@ public class Dormitory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(value = 1)
     private int id;
 
     @NotNull(message = "Please enter the name of the dormitory")
@@ -18,7 +19,7 @@ public class Dormitory {
     @NotNull(message = "Please enter the address!")
     private String address;
 
-    @Min(value = 100)
+    @Min(value = 100, message = "The minimum accepted capacity is 100")
     private int capacity;
 
 public Dormitory(){}
