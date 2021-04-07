@@ -11,10 +11,9 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Min(value =   1)
     private int id;
 
-    @NotNull(message = "Please enter the name of the department!")
+   // @NotNull(message = "Please enter the name of the department!")
     private String name;
 
     @OneToMany(mappedBy = "studentDep")

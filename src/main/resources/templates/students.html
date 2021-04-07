@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Students </title>
@@ -43,7 +43,7 @@ img {
             <li class="nav-item active">
                 <a class="nav-link" href="/students/list">Students</a>
             </li>
-
+            Logged as:  <span sec:authentication="name"> user</span>
         </ul>
 
     </div>
@@ -51,40 +51,40 @@ img {
 
 
 <div class="container">
-    <img src="D:\project1_AWBD\src\main\resources\pictures\studenti.png" class="center" alt="Universitate">
+    <!--   <img src="D:\project1_AWBD\src\main\resources\pictures\studenti.png" class="center" alt="Universitate"> -->
 
-    <table class="table table-hover ">
-        <thead class="thead-inverse">
-        <tr >
-            <th>ID</th>
-            <th>Email</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th> Dormitory</th>
-            <th> Department</th>
+     <table class="table table-hover ">
+         <thead class="thead-inverse">
+         <tr >
+             <th>ID</th>
+             <th>Email</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th> Dormitory</th>
+             <th> Department</th>
 
-        </tr>
-        </thead>
-        <tr  th:each="student, stat : ${students}"
-            th:class="${stat.odd}? 'table-light':'table-dark'"
-        >
-            <td th:text="${student.id}">1</td>
-            <td th:text="${student.email}">Email </td>
-            <td th:text="${student.lastName}">Last Name</td>
-            <td th:text="${student.firstName}">First Name</td>
-            <td th:text="${student.getStudDormitory().getName()}">Dormitory</td>
-            <td th:text="${student.getStudentDep().getName()}">Department</td>
+         </tr>
+         </thead>
+         <tr  th:each="student, stat : ${students}"
+             th:class="${stat.odd}? 'table-light':'table-dark'"
+         >
+             <td th:text="${student.id}">1</td>
+             <td th:text="${student.email}">Email </td>
+             <td th:text="${student.lastName}">Last Name</td>
+             <td th:text="${student.firstName}">First Name</td>
+             <td th:text="${student.getStudDormitory().getName()}">Dormitory</td>
+             <td th:text="${student.getStudentDep().getName()}">Department</td>
 
-            <td><a href="#" th:href="@{'/student/info/' + ${student.id}}">Info</a></td>
-            <td><a href="#" th:href="@{'/student/delete/' + ${student.id}}">Delete</a></td>
-        </tr>
-    </table>
-    <form class="button" th:action="@{/student/new}" method="POST">
-        <input type="submit" class="btn btn-primary" value="ADD STUDENT"/>
-    </form>
+             <td><a href="#" th:href="@{'/student/info/' + ${student.id}}">Info</a></td>
+             <td><a href="#" th:href="@{'/student/delete/' + ${student.id}}">Delete</a></td>
+         </tr>
+     </table>
+     <form class="button" th:action="@{/student/new}" method="POST">
+         <input type="submit" class="btn btn-primary" value="ADD STUDENT"/>
+     </form>
 
-    <br><br>
-    <div class="col-md-3"><form th:action="@{/logout}" method="POST"> <input type="submit" class="btn btn-primary" value="Logout"> </form></div>
-</div>
-</body>
-</html>
+     <br><br>
+     <div class="col-md-3"><form th:action="@{/logout}" method="POST"> <input type="submit" class="btn btn-primary" value="Logout"> </form></div>
+ </div>
+ </body>
+ </html>

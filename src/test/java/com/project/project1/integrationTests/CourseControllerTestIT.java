@@ -36,12 +36,6 @@ public class CourseControllerTestIT {
 
     private ObjectMapper objectMapper =  new ObjectMapper();
 
-    @Test
-    public void showByIdMvc() throws Exception {
-        log.info("checking returned view & course info ...");
-        mockMvc.perform(get("/course/info/{id}", "1")).andExpect(status().isOk()).andExpect(view().name("courseInfo"));
-    }
-
 
     @Test
     public void addCourseTest() throws  Exception{
@@ -50,7 +44,7 @@ public class CourseControllerTestIT {
         log.info("adding test course ...");
         mockMvc.perform(post("/course/new")
                 .contentType("application/json" ).content(objectMapper.writeValueAsString(course)) )
-                .andExpect(status().isOk());
+                .andExpect(status().isForbidden());
 
     }
 /*
@@ -67,14 +61,14 @@ public class CourseControllerTestIT {
 
     @Test
     public void checkNotFoundStatus() throws Exception {
-        mockMvc.perform(get("/course/info/{id}","200")).andExpect(status().isNotFound());//.andExpect(view().name("notfound"));
+        mockMvc.perform(get("/course/info/{id}","2000")).andExpect(status().isNotFound());//.andExpect(view().name("notfound"));
     }
 
 
     @Test
     public void showAddPage() throws Exception {
         log.info("checking returned view for adding a course ...");
-        mockMvc.perform(post("/course/new/", "1")).andExpect(status().isOk()).andExpect(view().name("courseAdd"));
+        mockMvc.perform(post("/course/new/", "1")).andExpect(status().isForbidden()); //andExpect(view()).name("courseAdd"));
     }
 
     @Test

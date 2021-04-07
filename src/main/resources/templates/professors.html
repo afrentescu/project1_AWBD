@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Professors</title>
@@ -32,7 +32,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/students/list">Students</a>
             </li>
-
+            Logged as:  <span sec:authentication="name"> user</span>
         </ul>
 
     </div>

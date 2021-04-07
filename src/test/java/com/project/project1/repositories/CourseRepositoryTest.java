@@ -60,7 +60,7 @@ public class CourseRepositoryTest {
 
     @Test
     public void deleteById(){
-        courseRepository.deleteById(8);
-        assertThat(courseRepository.count()).isEqualTo(7);
+        courseRepository.deleteById(10);
+        assertThat(courseRepository.count()).isEqualTo(9);
     }
 }

@@ -48,7 +48,7 @@ public class ProfessorControllerTestIt {
         log.info("adding test professor ...");
         mockMvc.perform(post("/professor/new")
                 .contentType("application/json" ).content(objectMapper.writeValueAsString(professor)) )
-                .andExpect(status().isOk());
+                .andExpect(status().isForbidden());
 
     }
 

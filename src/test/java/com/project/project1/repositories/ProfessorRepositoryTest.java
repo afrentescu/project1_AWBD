@@ -57,8 +57,8 @@ public class ProfessorRepositoryTest {
 
     @Test
     public void deleteById(){
-        professorRepository.deleteById(6);
-        assertThat(professorRepository.count()).isEqualTo(5);
+        professorRepository.deleteById(11);
+        assertThat(professorRepository.count()).isEqualTo(13);
     }
 
 }

@@ -46,13 +46,13 @@ public class DepartmentControllerTestIT {
 
         mockMvc.perform(post("/department/new")
                 .contentType("application/json" ).content(objectMapper.writeValueAsString(department)) )
-                .andExpect(status().isOk());
+                .andExpect(status().isForbidden());
 
     }
 
     @Test
     public void showAddPage() throws Exception {
-        mockMvc.perform(post("/department/new/", "1")).andExpect(status().isOk()).andExpect(view().name("departmentAdd"));
+        mockMvc.perform(post("/department/new/", "1")).andExpect(status().isForbidden()); //.andExpect(view().name("departmentAdd"));
     }
 
     @Test

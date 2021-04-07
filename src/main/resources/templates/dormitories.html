@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Dormitories</title>
@@ -33,7 +33,7 @@ img {
                 <a class="nav-link" href="/courses/list">Courses</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/courses/list">Courses</a>
+                <a class="nav-link" href="/dormitories/list">Dormitories</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/professors/list">Professors</a>
@@ -41,13 +41,13 @@ img {
             <li class="nav-item">
                 <a class="nav-link" href="/students/list">Students</a>
             </li>
-
+            Logged as:  <span sec:authentication="name"> user</span>
         </ul>
 
     </div>
 </nav>
 
-<img src="D:\project1_AWBD\src\main\resources\templates\campus.png" class="center">
+<!--<img src="D:\project1_AWBD\src\main\resources\templates\campus.png" class="center">-->
 
 <div class="container">
     <table class="table table-hover ">
