@@ -8,3 +8,5 @@ insert into dormitory (id, name, address, capacity) values (1, 'South park', 'ad
 insert into dormitory (id, name, address, capacity) values (2, 'West park', 'address 2', 1050);
 insert into dormitory (id, name, address, capacity) values (3, 'East park', 'address 3', 700);
 insert into dormitory (id, name, address, capacity) values (4, 'North park', 'address 4', 2600);
+
+

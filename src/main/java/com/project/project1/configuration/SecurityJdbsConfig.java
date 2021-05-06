@@ -34,9 +34,9 @@ public class SecurityJdbsConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/").hasAnyRole("PROFESSOR", "STUDENT", "PROFESSOR2")
-          //      .antMatchers("/professor/**")
-               // .hasRole("PROFESSOR2")
+                .antMatchers("/").hasAnyRole("PROFESSOR", "STUDENT")
+             .antMatchers("/professor/**")
+               .hasRole("PROFESSOR")
                 .and().formLogin().loginPage("/showLogInForm")
                 .loginProcessingUrl("/authUser").failureUrl("/login").permitAll().and().exceptionHandling().accessDeniedPage("/access_denied");
 
